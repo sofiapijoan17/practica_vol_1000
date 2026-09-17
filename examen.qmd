@@ -1,0 +1,108 @@
+---
+title: "Recuperatorio Parcial 1"
+format: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+```
+
+## Instrucciones
+
+### Indicaciones generales
+
+1. El examen es individual.
+2. Debes completar el examen en un máximo de 120 minutos.
+3. Podés utilizar cualquier libro, recurso en línea o código antiguo durante este examen, pero no puedes comunicarte con ninguna persona que no sean tus docentes.
+4. Debes usar las funciones que vimos en clase, en el libro de la materia y en los ejercicios, siguiendo los consejos vistos en clase.
+5. Si usás funciones que no vimos en clase o en el libro, agregá antes del chunk de código una breve explicación de por qué las elegiste (por ejemplo, por qué son una mejor opción que las vistas en clase y de donde obtuviste la información).
+6. Este examen parcial consta de varias tareas que debes completar. Cada tarea se describe en un chunk de código separado. Debes completar cada tarea en el chunk correspondiente.
+
+## Instrucciones para trabajar
+
+1. Vamos a utilizar GitHub Classroom para manejar el examen. Por favor, cloná este repositorio siguiendo las instrucciones que dejamos en el campus para comenzar a trabajar.
+2. Abrí el proyecto de RStudio y luego los archivos .qmd contenidos en la carpeta consignas del proyecto.
+3. Cuando termines, tendrás que *hacer commit y push para que tus cambios sean enviados a GitHub Classroom.*
+4. Copiá el SHA del commit y envialo a través del campus siguiendo las instrucciones que dejamos ahí.
+
+
+## Cargar Paquetes
+
+En el *chunk de setup* carga los paquetes que vas a necesitar para resolver el parcial.
+
+
+## Datos
+
+El Met Office es el servicio nacional de meteorología y clima del Reino Unido, que proporciona previsiones, avisos de fenómenos meteorológicos extremos y conocimientos científicos sobre el clima. Ayuda a las personas, las empresas y los gobiernos a tomar decisiones informadas para mantenerse a salvo y planificar el futuro. Se fundó en 1854, lo que la convierte en uno de los servicios meteorológicos más antiguos del mundo.
+
+Se incluyen 2 archivos csv con datos y metadatos:
+
+`datos_historicos_raw.csv`
+
+Los datos mensuales de estaciones meteorológicas a utilizar fueron descargados del Met Office. Incluyen columnas con el nombre de la estación, el año, el mes, la temperatura máxima, la mínima, la cantidad de días con temperatura bajo cero, la precipitación acumulada en el mes y las horas de sol.
+
+`metadatos_estaciones.csv`
+
+Incluye información sobre las estaciones incluyendo el id, el nombre, el año en el que fue abierta, la longitud y la latitude.
+
+### Lectura de los datos
+
+A continuación lee los archivos csv en 2 variables `datos_historicos_raw` y `metadatos`.
+
+```{r lectura}
+
+```
+
+Explorá los datos historicos (usando código, principalmente funciones de dplyr) y **hacé una lista de los problemas que identificas**.
+
+```{r exploración}
+
+```
+
+Lista
+
+* 
+* 
+
+### Limpieza de los datos
+
+A continuación arreglá los datos crudos para poder hacer el análisis de datos. Generá el código necesario para hacer la limpieza y guardá la tabla final la variable `datos_historicos`. El código debe ser una cadena de operaciones usando la pipe, no guardes variables intermedias.
+
+```{r limpieza-datos-historicos}
+
+```
+
+El código de arriba debe resolver:
+
+-   las columnas deben tener un nombre apropiado para trabajar en R. Cambiá el nombre de las columnas.
+-   las columnas deben ser del tipo correcto. Hacé las modificaciones necesarias.
+-   generá una nueva columna con la fecha completa (año y mes)
+-   y cualquier otro problema que hayas identificado
+
+## Análisis de datos
+
+¿Cuál fue la máxima y mínima temperatura registrada en cada estación? Mostrá la respuesta en forma de tabla ordenando las estaciones de mayor amplitud termica mensual (diferencia entre la maxima y la minima) a menor.
+
+```{r max-min-tabla}
+
+```
+
+¿Cuál es el promedio de precipitación **anual** en cada región de Reino Unido? Región sur se define como las estaciones al sur de 55 grados de latitud y Región norte se define como las estaciones al norte de 55 grados.
+
+```{r regiones}
+
+```
+
+¿Cómo cambia la temperatura minima y maxima a lo largo del tiempo? Graficá el promedio anual a lo largo de los años para las 2 variables en el mismo gráfico. Agregá un título y etiquetas significativas. Si usas colores, deben representar las variables correctamente.
+
+```{r serie}
+
+```
+
+Haciendo foco en las estaciones Oxford, Armagh, Durham, Southampton, Sheffield y Stornoway, analisá la precipitación para identificar años de sequía. Calculá la anomalía anual de precipitación (es decir, la diferencia entre la precipitación anual de cada año y la precipitación anual media) y graficá como cambia a lo largo del tiempo. Usá facetas para mostrar los datos de cada estación.
+
+```{r sequia}
+
+```
